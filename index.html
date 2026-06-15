@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SASH</title>
+  <link rel="icon" type="image/png" href="/logo.PNG">
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #000;
+      font-family: Arial, sans-serif;
+      color: white;
+    }
+
+    .loader {
+      text-align: center;
+    }
+
+    /* BIG SASH */
+    .name {
+      font-size: 90px;
+      font-weight: 800;
+      letter-spacing: 12px;
+      margin-bottom: 30px;
+      animation: bounce 1.8s infinite ease-in-out;
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-12px);
+      }
+    }
+
+    /* SPEED TEXT */
+    .speed {
+      font-size: 20px;
+      color: #aaa;
+      letter-spacing: 2px;
+    }
+
+    #speed {
+      color: white;
+      font-weight: bold;
+    }
+
+    .name a {
+      color: inherit;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="loader">
+    <div class="name">
+      <a href="http://saroj-bio.github.io">SASH</a>
+    </div>
+
+    <div class="speed">
+      NET SPEED: <span id="speed">0</span> Mbps
+    </div>
+  </div>
+
+  <script>
+    const speedEl = document.getElementById("speed");
+
+    function updateSpeed() {
+      let speed = (Math.random() * 80 + 10).toFixed(1);
+      speedEl.textContent = speed;
+    }
+
+    updateSpeed();
+    setInterval(updateSpeed, 500);
+  </script>
+
+</body>
+</html>
